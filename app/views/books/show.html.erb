@@ -2,7 +2,7 @@
 
 <p>
 <%= link_to 'All Books', books_path %> |
-<%= link_to "Home", root_path %>    
+<%= link_to "Home", root_path %>
 </p>
 
 <table>
@@ -20,14 +20,13 @@
 		<td>
 			<%= form_with model: @book, local: true, url: remove_spell_from_book_path, method: :delete do |form| %>
 				<%= hidden_field_tag 'spell_id', spell.id %>
-				<%= form.submit "Remove Spell"  %>   
+				<%= form.submit "Remove Spell"  %>
 			<% end %>
 		</td>
-		
+
 
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to "Add Spell", add_spell_to_book_id_path(@book) %>    
-
+<%= link_to "Add Spell Card", add_spell_to_book_id_path(@book) %>
