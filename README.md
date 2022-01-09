@@ -20,17 +20,17 @@ the language that Shopify uses in their backend servers.
 
 ## Demonstration
 ![image](https://user-images.githubusercontent.com/30819550/148667744-8861e7ce-0832-4702-aa8b-91adb40e20ea.png)
+
+
 On the card spell page, users can create new spells, edit it, or add it to a collection. To create a new card spell, you must specify details such as the title, the type of card, the classes, and the level. Creating this new card will create a new inventory item that can be added to a book collection of spell cards. You can also edit the spell by changing any of the fields, or deleting it. Deleting it will remove the spell card from the book collection.
 
-![image](https://user-images.githubusercontent.com/30819550/148667825-45cbd811-43ff-494b-bd49-c5daf650e5a2.png)
 
 ![image](https://user-images.githubusercontent.com/30819550/148667744-8861e7ce-0832-4702-aa8b-91adb40e20ea.png)
 Users can also explore the different book collections created. Each book collection contains spells and by clicking on the book title, you can view the spell cards in the book. This is a fully functional CRUD application, so you can create new books, remove, update, and view a list of the books.
 
-![image](https://user-images.githubusercontent.com/30819550/148667850-5157d573-2571-4e47-b6fd-40dc8aff2371.png)
 
 ![image](https://user-images.githubusercontent.com/30819550/148667744-8861e7ce-0832-4702-aa8b-91adb40e20ea.png)
-
+A list of card spells in the book collection
 
 ## Running locally
 1. `cd shopify-spellmanager`
