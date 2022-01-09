@@ -1,0 +1,33 @@
+<h1>Books</h1>
+
+<b>
+<%= link_to 'New Book', new_book_path %> |
+<%= link_to "Home", root_path %>    
+</b>
+
+<table>
+  <thead>
+    <tr>
+	  <th>
+		  <%= link_to books_path(order_by: 'count') do %>
+			  <strong>Spell Count</strong>
+			<% end %>
+	  </th>
+	  
+
+      <th><%= link_to 'Bookname', books_path(order_by: 'name') %></th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @books.each do |book| %>
+	  <tr>
+		<td><%= book.spellcount %></td>
+        <td><%= link_to book.name, book_path(book) %></td>
+		<td><%= form_with model: book, local: true, method: 'delete' do |f| %>
+                 <%= f.submit "Delete Book" %>     
+             <% end %>
+		</td>
+	  </tr>
+	<% end %>
+  </tbody>
+</table>

@@ -1,0 +1,58 @@
+<%= form_with(model: spell, local: true) do |form| %>
+  <% if spell.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(spell.errors.count, "error") %> prevented this spell from being saved:</h2>
+      <ul>
+        <% spell.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :level %>
+    <%= form.select :level, (0..9) %>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :school_id %>
+    <%= form.select(:school_id, School.to_nested_array_for_select, { include_blank: 'Select a School' }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spellclass_ids, 'Spellclass' %> <br/>
+    <%= form.collection_check_boxes :spellclass_ids, Spellclass.all, :id, :name %>
+
+  </div>
+
+
+
+  <div class="field">
+	  
+	<%= form.label :concentration %><br />
+    <%= form.radio_button :concentration, true %>
+    <%= form.label :concentration, "Yes", :value => "true", style: "display: inline"  %>
+
+    <%= form.radio_button :concentration, false, :checked => true %>
+    <%= form.label :concentration, "No", :value => "false", style: "display: inline" %>
+	  
+  </div>
+
+  <div class="field">
+	  <%= form.label :description %>
+	  <%= form.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit" %>
+  </div>
+    
+
+<% end %>
+

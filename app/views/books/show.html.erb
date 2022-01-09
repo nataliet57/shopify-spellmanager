@@ -1,0 +1,33 @@
+<h1>View <%= @book.name %></h1>
+
+<p>
+<%= link_to 'All Books', books_path %> |
+<%= link_to "Home", root_path %>    
+</p>
+
+<table>
+    <th>Name</th>
+    <th>Level</th>
+    <th>School</th>
+    <th>Concentration</th>
+	<tbody>
+    <% @book.spells.each do |spell| %>
+      <tr>
+		<td><%= link_to spell.title, spell_path(spell)%></td>
+		 <td><%= spell.level %> </td>
+		 <td><%= spell.school.name %> </td>
+		  <td><%= spell.isConcentration %></td>
+		<td>
+			<%= form_with model: @book, local: true, url: remove_spell_from_book_path, method: :delete do |form| %>
+				<%= hidden_field_tag 'spell_id', spell.id %>
+				<%= form.submit "Remove Spell"  %>   
+			<% end %>
+		</td>
+		
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add Spell", add_spell_to_book_id_path(@book) %>    
+

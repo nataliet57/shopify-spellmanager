@@ -1,0 +1,16 @@
+<h1>Add <%= @spell.title %> to Book</h1>
+<p>
+<%= link_to 'All Spells', spells_path %> |
+<%= link_to "Home", root_path %>    
+</p>    
+<%= form_with model: @spell, local: true,  url: put_spell_id_in_book_path, method: :post do |form| %>
+  <div class="field">
+    <%= form.label :book_id %>
+    <%= form.select(:book_id, Book.to_nested_array_for_select) %>
+	<%= flash[:message] %>  
+	<%= form.submit "Submit" %>
+
+  </div>
+<% end %>
+
+

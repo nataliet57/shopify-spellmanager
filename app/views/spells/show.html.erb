@@ -1,0 +1,35 @@
+<h1>View <%= @spell.title %></h1>
+<%= link_to 'All Spells', spells_path %> |
+<%= link_to "Home", root_path %>    
+<table>
+	
+    <tr><td>Title:</td><td><%= @spell.title %></td></tr>
+    <tr><td>Level:</td><td><%= @spell.level %></td></tr>
+    <tr><td>School:</td><td><%= @spell.school.name %></td></tr>
+    <tr><td>Concentration:</td>
+		<td>
+			<% if @spell.concentration %>
+			<%= 'Yes' %>
+			<% else %>
+			<%= 'No' %>
+			<% end %>
+		</td>
+	</tr>
+    <tr><td>Description:</td><td><%= @spell.description %></td></tr>
+    <tr><td>Classes:</td>
+		<td>
+		<% @spell.spellclasses.each do |spellclasses| %>
+			<%= spellclasses.name %>, 
+		<% end %>
+		</td>
+	</tr>
+</table>
+
+<p>
+	
+<%= link_to(add_to_book_path(@spell)) do %>
+	<p>Add <%= @spell.title %> to book</p>
+<% end %>
+
+</p>
+

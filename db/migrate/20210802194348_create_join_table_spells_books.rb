@@ -1,0 +1,7 @@
+class CreateJoinTableSpellsBooks < ActiveRecord::Migration[6.1]
+  def change
+    create_join_table :spells, :books do |t|
+      t.index [:book_id, :spell_id], unique: true
+    end
+  end
+end
