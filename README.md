@@ -3,7 +3,8 @@
 Additional feature: Ability to assign/remove inventory items to a named group/collection. Card game spells can be added to book collections
 
 This application uses ruby on rails and SQLite db. I chose this stack because of it's efficiency, and to align with 
-the language that Shopify uses in their backend servers. 
+the language that Shopify uses in their backend servers. In this inventory control application, users can create new cards/add new cards 
+and fill in the details. Users can perform CRUD operations on the inventory and add it to a collection
 
 (Note: the project comes with a pre-seeded database with 10+ entries.)
 
