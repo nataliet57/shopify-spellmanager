@@ -41,7 +41,8 @@ You must be running at least ruby 3.0.1 for this application to work as specifie
 
 The application should appear on  http://localhost:3000/ 
 
-
+## Future additions
+I tried to implement another function where you can sort the categories alphabetically. If I had more time I would add that. I also think that having the search/filter function could be helpful when trying to find a card spell in a collectino of so many card spells
 
 **Production Deployment:** https://spellmanager-n6tam.herokuapp.com/spells
 
